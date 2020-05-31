@@ -106,6 +106,7 @@ def result(e):
         if output2 !='':
             # print a output on reponse text widget
             response.insert(END, "Bot: " + output2 + '\n\n')
+    response.config(state=DISABLED)
     # this is used to see the last message on the text widget
     response.yview(END)
 
@@ -181,7 +182,7 @@ send.place(x=300, y=420, height=40,width=85)
 
 # call wish me fuction to initialize response
 wishme()
-
-
+# it is used user cannot type on response text widget
+response.config(state=DISABLED)
 # bind a whole str. in a loop to display continous result
 root.mainloop()
